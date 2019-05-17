@@ -19,7 +19,9 @@ constraint Pk_workout_collection primary key (workout_id)
 
 alter table workout_collection add constraint Fk_workout_collection_workout_category foreign key(category_id) references workout_category(category_id)
 --
+
 create table workout_active(
+activity_id int identity,
 workout_id int,
 start_time time,
 starts_date date,
@@ -28,5 +30,8 @@ end_time time,
 comment varchar(64),
 statuss bit
 
+constraint Pk_workout_active primary key (activity_id )
 FOREIGN KEY (workout_id) REFERENCES workout_collection(workout_id)
 )
+
+select * from workout_collection
