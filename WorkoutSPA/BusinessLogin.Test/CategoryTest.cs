@@ -13,11 +13,11 @@ namespace BusinessLogin.Test
    public class CategoryTest
     {
         [Test]
-        public static void ListCategory()
+        public  void ListCategory()
         {
-            var obj = new WorkoutApplicationDBEntities();
+            var obj = new CategoryRepo();
             var expected = 0;
-            var actual = obj.workout_category.Count();
+            var actual = obj.ListCategory().Count();
             Assert.AreEqual(expected, actual);
 
         }

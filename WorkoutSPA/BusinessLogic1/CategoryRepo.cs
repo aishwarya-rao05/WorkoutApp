@@ -8,22 +8,19 @@ namespace BusinessLogic1
 {
     public class CategoryRepo
     {
-        public static void ListCategory()
+       private WorkoutApplicationDBEntities db = new WorkoutApplicationDBEntities();
+
+        public List<workout_category> ListCategory()
         {
             try
             {
-                var Obj = new WorkoutApplicationDBEntities();
-                var Query = from obj in Obj.workout_category
-                            select obj;
-
-                foreach (workout_category cat in Query)
-                {
-                    Console.WriteLine("category_id={0}, category_name={1}", cat.category_id, cat.category_name);
-                }
+                                
+                return db.workout_category.ToList();
+                
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
  
@@ -32,3 +29,13 @@ namespace BusinessLogic1
 
     }
 }
+
+
+//var Obj = new WorkoutApplicationDBEntities();
+//var Query = from obj in Obj.workout_category
+//            select obj;
+
+//foreach (workout_category cat in Query)
+//{
+//    Console.WriteLine("category_id={0}, category_name={1}", cat.category_id, cat.category_name);
+//}

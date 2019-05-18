@@ -35,3 +35,5 @@ FOREIGN KEY (workout_id) REFERENCES workout_collection(workout_id)
 )
 
 select * from workout_collection
+
+insert into workout_category values('walking')
