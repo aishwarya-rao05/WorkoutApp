@@ -7,12 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BusinessLogic
+namespace BusinessLogic1
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-   
     
     public partial class WorkoutApplicationDBEntities : DbContext
     {
@@ -26,8 +25,8 @@ namespace BusinessLogic
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<workout_active> workout_actives { get; set; }
-        public virtual DbSet<workout_category> workout_categorys { get; set; }
-        public virtual DbSet<workout_collection> workout_collections { get; set; }
+        public virtual DbSet<workout_active> workout_active { get; set; }
+        public virtual DbSet<workout_category> workout_category { get; set; }
+        public virtual DbSet<workout_collection> workout_collection { get; set; }
     }
 }

@@ -55,7 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CategoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,9 +63,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
-      <Project>{5deaffdd-4dea-4c84-ab81-435f7ab07f1f}</Project>
-      <Name>BusinessLogic</Name>
+    <ProjectReference Include="..\BusinessLogic1\BusinessLogic1.csproj">
+      <Project>{75c90e3b-7ba4-4bea-b937-e9c1bbaa6a3e}</Project>
+      <Name>BusinessLogic1</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

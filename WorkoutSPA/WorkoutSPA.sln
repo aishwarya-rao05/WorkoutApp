@@ -8,13 +8,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		SqlWOA.sql = SqlWOA.sql
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{5DEAFFDD-4DEA-4C84-AB81-435F7AB07F1F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogin.Test", "BusinessLogin.Test\BusinessLogin.Test.csproj", "{8398D936-2B88-4C0A-8FA3-2DF9ABF8305A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackerService", "TrackerService\TrackerService.csproj", "{C58DD1D6-6D5B-495F-A11F-E30A0E4C2C90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackerApp.SPA", "TrackerApp.SPA\TrackerApp.SPA.csproj", "{836271E8-2E35-43A6-8A27-30ECD2FB387C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrackerApp.SPA", "TrackerApp.SPA\TrackerApp.SPA.csproj", "{836271E8-2E35-43A6-8A27-30ECD2FB387C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic1", "BusinessLogic1\BusinessLogic1.csproj", "{75C90E3B-7BA4-4BEA-B937-E9C1BBAA6A3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,10 +22,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5DEAFFDD-4DEA-4C84-AB81-435F7AB07F1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5DEAFFDD-4DEA-4C84-AB81-435F7AB07F1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5DEAFFDD-4DEA-4C84-AB81-435F7AB07F1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5DEAFFDD-4DEA-4C84-AB81-435F7AB07F1F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8398D936-2B88-4C0A-8FA3-2DF9ABF8305A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8398D936-2B88-4C0A-8FA3-2DF9ABF8305A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8398D936-2B88-4C0A-8FA3-2DF9ABF8305A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -38,6 +34,10 @@ Global
 		{836271E8-2E35-43A6-8A27-30ECD2FB387C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{836271E8-2E35-43A6-8A27-30ECD2FB387C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{836271E8-2E35-43A6-8A27-30ECD2FB387C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75C90E3B-7BA4-4BEA-B937-E9C1BBAA6A3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75C90E3B-7BA4-4BEA-B937-E9C1BBAA6A3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75C90E3B-7BA4-4BEA-B937-E9C1BBAA6A3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75C90E3B-7BA4-4BEA-B937-E9C1BBAA6A3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
