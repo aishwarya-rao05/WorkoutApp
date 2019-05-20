@@ -1,0 +1,15 @@
+<form novalidate [formGroup]="frmCat" (ngSubmit)="saveform(frmCat)" >
+  <div class="form-group col-md-4">
+    <label for="">Enter Id</label>
+    <input type="number" name="id" id="id" fromControlName="id"  class="form-control" >
+    </div>
+  <div class="form-group col-md-4">
+    <label for="">Enter Name</label>
+    <input type="text" name="name" id="name" fromControlName="name" class="form-control" >
+    </div>
+  <div class="form-group col-md-12">
+    <button type="submit" class="btn btn-success btn-lg">Save</button>
+    <a [routerLink]="['/category-list']" class="btn btn-secondary ml-3">Back to list</a>
+
+  </div>
+</form>

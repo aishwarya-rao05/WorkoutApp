@@ -1,0 +1,17 @@
+<table class="table">
+
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let cat of categorys">
+    <td>{{cat.category_id}}</td>
+    <td>{{cat.category_name}}</td>
+    <td>
+      <a [routerLink]="['category-edit',cat.category_id]">Edit</a>
+      <a [routerLink]="['category-delete',cat.category_id]">Delete</a>
+      
+    </td>
+  </tr>
+</table>
