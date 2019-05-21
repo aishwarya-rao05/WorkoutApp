@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12-md">
+      <h5>ADD WORKOUT</h5>
+      <label class="label label-default">Title</label>
+      <textarea class="form-control" rows="1" cols="10"></textarea>
+      <br />
+      <label class="label label-default">Note</label>
+      <textarea class="form-control" rows="5" cols="30"></textarea>
+      <br />
+
+
+
+      <div class="form-group form-inline">
+        <label>Calories Burnt Per Min</label>
+        <input type="text" name="Calories" id="Calories" formControlName="Calories" class="form-control" value="{{count}}" />
+
+        <button type="submit" class="btn btn-danger" (click)="decrease()">-</button>
+        <button type="submit" class="btn btn-success" (click)="increase()">+</button>
+      </div>
+
+
+
+      <br />
+      <div class="form-group">
+        <label>Category</label>
+        <select>
+          <option *ngFor="let catgs of categories">{{catgs.category_name}}</option>
+
+        </select>
+        <button type="submit" class="btn btn-primary">ok</button>
+      </div>
+
+
+      <br />
+      <button type="submit"  class="btn btn-success btn-lg">Add Workout</button>
+
+    </div>
+  </div>
+</div>

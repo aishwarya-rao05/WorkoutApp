@@ -10,7 +10,7 @@ import { ListCategoryComponent } from './Category/list-category/list-category.co
 import { EditCategoryComponent } from './Category/edit-category/edit-category.component';
 import { DeleteCategoryComponent } from './Category/delete-category/delete-category.component';
 import { AddCategoryComponent } from './Category/add-category/add-category.component';
-
+import { AddWorkoutComponent } from './Create/add-workout/add-workout.component';
 
 
 
@@ -21,7 +21,8 @@ import { AddCategoryComponent } from './Category/add-category/add-category.compo
     ListCategoryComponent,
     EditCategoryComponent,
     DeleteCategoryComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    AddWorkoutComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -33,11 +34,11 @@ import { AddCategoryComponent } from './Category/add-category/add-category.compo
         component: ListCategoryComponent
       },
       {
-        path: 'category-edit/:id',
+        path: 'category-edit',
         component: EditCategoryComponent
       },
       {
-        path: 'category-delete/:id',
+        path: 'category-delete',
         component: DeleteCategoryComponent
       },
       {
@@ -45,9 +46,14 @@ import { AddCategoryComponent } from './Category/add-category/add-category.compo
         component: AddCategoryComponent
       },
 
+      {
+        path: 'add-workout',
+        component: AddWorkoutComponent
+      },
+
     ])
   ],
   providers: [WorkoutService],
-  bootstrap: [AddCategoryComponent]
+  bootstrap: [AddWorkoutComponent]
 })
 export class AppModule { }

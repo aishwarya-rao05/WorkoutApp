@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators, NgForm } from '@angular/forms';
 import { WorkoutService } from '../../workout.service';
 import { category } from '../../Category';
@@ -12,31 +12,30 @@ import { category } from '../../Category';
 export class AddCategoryComponent implements OnInit {
   /** Add-Category ctor */
 
-  frmCat: FormGroup;
+  frmCatg: FormGroup;
   @Output() CategoryAdded = new EventEmitter<string>();
   constructor(private fb: FormBuilder, private service: WorkoutService) {
 
   }
 
   ngOnInit() {
-    this.frmCat = this.fb.group({
-      id: new FormControl('0', [Validators.required]),
+    this.frmCatg = this.fb.group({
+      
       name: new FormControl('', [Validators.required, Validators.minLength(3)])
     });
   }
   //property to access formgroup
   get f() {
-    return this.frmCat.controls;
+    return this.frmCatg.controls;
   }
 
 
-  saveform(catg: NgForm) {
-    if (catg.valid) {
-      let ctg: category = new category(catg.value.id, catg.value.name);
+  saveform(frm: NgForm) {
+    if (frm.valid) {
+      let ctg: category = new category(frm.value.id, frm.value.name);
       this.service.save(ctg).subscribe(
         (data) => alert('Added'),
-        (error
-        ) => alert('Error processing request')
+        (_error) => console.log('Error processing request')
       );
     }
   }

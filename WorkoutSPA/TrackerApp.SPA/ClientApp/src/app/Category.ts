@@ -1,5 +1,5 @@
 export class category {
-  constructor(public category_id: number, public category_name: string) { }
+  constructor(public category_id: string, public category_name: string) { }
 
 }
 
