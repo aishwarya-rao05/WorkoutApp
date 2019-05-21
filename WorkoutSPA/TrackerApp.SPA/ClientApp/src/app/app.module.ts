@@ -48,6 +48,6 @@ import { AddCategoryComponent } from './Category/add-category/add-category.compo
     ])
   ],
   providers: [WorkoutService],
-  bootstrap: [ListCategoryComponent]
+  bootstrap: [AddCategoryComponent]
 })
 export class AppModule { }

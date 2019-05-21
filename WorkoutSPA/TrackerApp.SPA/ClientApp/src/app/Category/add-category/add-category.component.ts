@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators, NgForm } from '@angular/forms';
 import { WorkoutService } from '../../workout.service';
 import { category } from '../../Category';
@@ -13,6 +13,7 @@ export class AddCategoryComponent implements OnInit {
   /** Add-Category ctor */
 
   frmCat: FormGroup;
+  @Output() CategoryAdded = new EventEmitter<string>();
   constructor(private fb: FormBuilder, private service: WorkoutService) {
 
   }
@@ -23,6 +24,11 @@ export class AddCategoryComponent implements OnInit {
       name: new FormControl('', [Validators.required, Validators.minLength(3)])
     });
   }
+  //property to access formgroup
+  get f() {
+    return this.frmCat.controls;
+  }
+
 
   saveform(catg: NgForm) {
     if (catg.valid) {

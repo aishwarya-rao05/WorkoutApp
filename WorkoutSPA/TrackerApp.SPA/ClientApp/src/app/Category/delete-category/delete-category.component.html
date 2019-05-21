@@ -1,1 +1,11 @@
-﻿<div style="border: 1px solid red">delete-category Component</div>
+{{cate | json}}
+<dl>
+  <dt>Category Id</dt>
+  <dd>{{cate.category_id}}</dd>
+  <dt> Category Name </dt>
+  <dd>{{cate.category_name}}</dd>
+</dl>
+<div class="form-group">
+  <button type="button" (click)="delete()" class="btn btn-danger">delete</button>
+  <a [routerLink]="['/list-departments']" class="btn btn-secondary ml-3">Back to list</a>
+</div>
