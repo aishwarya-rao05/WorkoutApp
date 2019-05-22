@@ -9,8 +9,8 @@
     <td>{{cat.category_id}}</td>
     <td>{{cat.category_name}}</td>
     <td>
-      <a [routerLink]="['category-edit',cat.category_id]" class="btn btn-secondary ml-3">Edit   </a>
-      <a [routerLink]="['category-delete',cat.category_id]" class="btn btn-danger ml-3">Delete</a>
+      <a [routerLink]="['/category-edit',cat.category_id]" class="btn btn-secondary ml-3">Edit   </a>
+      <a [routerLink]="['/category-delete',cat.category_id]" class="btn btn-danger ml-3">Delete</a>
       
     </td>
   </tr>

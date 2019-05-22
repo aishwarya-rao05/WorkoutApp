@@ -18,7 +18,7 @@ export class DeleteCategoryComponent {
   }
 
   ngOnInit() {
-    let id = this.currentRoute.snapshot.paramMap.get('Id');
+    let id = this.currentRoute.snapshot.paramMap.get('id');
     this.service.getById(id).subscribe(
       (data) => this.cate = data,
       (_error) => alert('notfound')

@@ -6,7 +6,18 @@ category_id int identity not null,
 category_name varchar(64) 
 )
 alter table workout_category add constraint Pk_workout_category primary key(category_id)
+
+
+select * from workout_category
+
+insert into workout_category values('legs')
+
+insert into workout_collection values('')
+
+
 --
+
+
 create table workout_collection(
 workout_title varchar(128),
 workout_note varchar(256),
@@ -40,8 +51,4 @@ constraint Pk_workout_active primary key (activity_id )
 FOREIGN KEY (workout_id) REFERENCES workout_collection(workout_id)
 )
 
-select * from workout_category
-
-insert into workout_category values('legs')
-
-insert into workout_collection values('')
+--insert into workout_active values()

@@ -90,13 +90,13 @@ namespace BusinessLogic1
         //to delete workout
         public void DeleteCategory(int id)
         {
-            Console.WriteLine("enter name of category to delete");
-            int Id = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("enter name of category to delete");
+           // int Id = Convert.ToInt32(Console.ReadLine());
             try
             {
 
                 var Objworkout = (from objj in db.workout_collection
-                                   where objj.workout_id == Id
+                                   where objj.workout_id == id
                                    select objj).First();
                 db.workout_collection.Remove(Objworkout);
                 db.SaveChanges();

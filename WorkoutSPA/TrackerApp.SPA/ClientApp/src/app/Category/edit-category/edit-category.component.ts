@@ -12,8 +12,8 @@ import { category } from '../../Category';
 /** edit-category component*/
 export class EditCategoryComponent implements OnInit {
   frmCatg: FormGroup;
-  @Input() AddCate: category;
-  @Output() EditCategory = new EventEmitter<category>();
+  
+  
   
   
   constructor(private currentRoute: ActivatedRoute, private service: WorkoutService, private fb: FormBuilder) { }
@@ -23,7 +23,7 @@ export class EditCategoryComponent implements OnInit {
   }
   ngOnInit() {
     this.frmCatg = this.fb.group({
-      id: new FormControl('', [Validators.required]),
+      id: new FormControl(''),
       name: new FormControl('', [Validators.required, Validators.minLength(3)])
     });
     let id = this.currentRoute.snapshot.paramMap.get('id');
@@ -36,7 +36,7 @@ export class EditCategoryComponent implements OnInit {
     );
 
   }
-  saveForm(frm: NgForm) {
+  saveform(frm: NgForm) {
     if (frm.valid) {
       let dept: category = new category(frm.value.id, frm.value.name);
       this.service.update(dept).subscribe(

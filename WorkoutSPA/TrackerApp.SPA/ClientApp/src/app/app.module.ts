@@ -48,11 +48,11 @@ import { DeleteWorkoutComponent } from './Create/delete-workout/delete-workout.c
         component: ListCategoryComponent
       },
       {
-        path: 'category-edit',
+        path: 'category-edit/:id',
         component: EditCategoryComponent
       },
       {
-        path: 'category-delete',
+        path: 'category-delete/:id',
         component: DeleteCategoryComponent
       },
       {

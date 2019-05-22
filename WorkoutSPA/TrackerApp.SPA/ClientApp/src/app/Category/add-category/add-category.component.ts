@@ -13,7 +13,7 @@ export class AddCategoryComponent implements OnInit {
  
 
   frmCatg: FormGroup;
-  @Output() CategoryAdded = new EventEmitter<string>();
+  
   constructor(private fb: FormBuilder, private service: WorkoutService) {
 
   }
@@ -31,6 +31,7 @@ export class AddCategoryComponent implements OnInit {
 
 
   saveform(frm: NgForm) {
+    console.log(frm);
     if (frm.valid) {
      
       let ctg: category = new category(frm.value.id, frm.value.name);

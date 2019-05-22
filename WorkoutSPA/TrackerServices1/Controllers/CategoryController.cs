@@ -9,7 +9,6 @@ using BusinessLogic1;
 
 namespace TrackerServices1.Controllers
 {
-    [Route("api/Category")]
     public class CategoryController : ApiController
     {
         WorkoutApplicationDBEntities db = new WorkoutApplicationDBEntities();
@@ -20,9 +19,9 @@ namespace TrackerServices1.Controllers
             return Ok(objRepo.ListCategory()); 
         }
 
-        public IHttpActionResult Get(int category_id)
+        public IHttpActionResult Get(int id)
         {
-            var findCategory = db.workout_category.Find(category_id);
+            var findCategory = db.workout_category.Find(id);
             if (findCategory == null) return NotFound();
             return Ok(findCategory);
         }
@@ -57,10 +56,10 @@ namespace TrackerServices1.Controllers
             }
         }
 
-        [Route("{category_id}")]
-        public IHttpActionResult Delete(int category_id)
+        //[Route("{category_id}")]
+        public IHttpActionResult Delete(int id)
         {
-            var findCategory = db.workout_category.Find(category_id);
+            var findCategory = db.workout_category.Find(id);
             if (findCategory == null) return NotFound();
             db.workout_category.Remove(findCategory);
             var rows = db.SaveChanges();
