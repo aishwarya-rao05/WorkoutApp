@@ -14,55 +14,42 @@ export class EditCategoryComponent implements OnInit {
   frmCatg: FormGroup;
   @Input() AddCate: category;
   @Output() EditCategory = new EventEmitter<category>();
-  @Output() DeleteCategory = new EventEmitter<category>();
-
-  //route service will give values in the route parameter
-  public click: boolean = false;
+  
+  
   constructor(private currentRoute: ActivatedRoute, private service: WorkoutService, private fb: FormBuilder) { }
 
   get f() {
     return this.frmCatg.controls;
   }
-
   ngOnInit() {
     this.frmCatg = this.fb.group({
-
-      name: new FormControl(this.AddCate.category_name, [Validators.required, Validators.minLength(3)])
+      id: new FormControl('', [Validators.required]),
+      name: new FormControl('', [Validators.required, Validators.minLength(3)])
     });
-
     let id = this.currentRoute.snapshot.paramMap.get('id');
+    this.service.getById(id).subscribe(
+      (data) => (
+        this.f.id.setValue(data.category_id),
+        this.f.name.setValue(data.category_name)
+      ),
+      (erro) => alert('Not found')
+    );
+
+  }
+  saveForm(frm: NgForm) {
+    if (frm.valid) {
+      let dept: category = new category(frm.value.id, frm.value.name);
+      this.service.update(dept).subscribe(
+        (data) => alert('updated'),
+        (erro) => alert('Error processing request')
+      );
+    }
   }
 
-  //saveForm(frm: NgForm) {
-  //  if (frm.valid) {
-  //    this.f.name.disable();
-  //    this.click = false;
-  //    let cate: category = new category(this.AddCate.category_id, frm.value.name);
-  //    this.service.update(cate).subscribe(
-  //      (data) => alert('updated'),
-  //      (error) => console.log(error)
-  //    );
-  //  }
 
-  //}
-  //public Enable(): void {
-  //  this.f.name.enable();
-  //  this.click = true;
-
-  //}
-
-  //deleteFrm(frm: NgForm) {
-  //  let cate = new category(this.AddCate.category_id, frm.value.name);
-    //this.CategoryDelete.emit(cate);
   }
-    //this.service.getById(id).subscribe(
-    //  (data) => (
-        
-    //    this.f.name.setValue(data.category_name)
-    //  ),
-    //  (_error) => alert('Not found')
-    //);
- // }
+  
+ 
 
 
 

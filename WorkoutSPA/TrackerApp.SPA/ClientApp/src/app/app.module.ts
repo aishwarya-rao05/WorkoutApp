@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { WorkoutService } from './workout.service';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ListCategoryComponent } from './Category/list-category/list-category.component';
@@ -11,6 +11,12 @@ import { EditCategoryComponent } from './Category/edit-category/edit-category.co
 import { DeleteCategoryComponent } from './Category/delete-category/delete-category.component';
 import { AddCategoryComponent } from './Category/add-category/add-category.component';
 import { AddWorkoutComponent } from './Create/add-workout/add-workout.component';
+import { TrackWorkoutComponent } from './Track/track-workout/track-workout.component';
+import { ViewWorkoutComponent } from './ViewAll/view-workout/view-workout.component';
+import { EndWorkoutComponent } from './Track/end-workout/end-workout.component';
+import { StartWorkoutComponent } from './Track/start-workout/start-workout.component';
+import { EditWorkoutComponent } from './Create/edit-workout/edit-workout.component';
+import { DeleteWorkoutComponent } from './Create/delete-workout/delete-workout.component';
 
 
 
@@ -22,11 +28,19 @@ import { AddWorkoutComponent } from './Create/add-workout/add-workout.component'
     EditCategoryComponent,
     DeleteCategoryComponent,
     AddCategoryComponent,
-    AddWorkoutComponent
+    AddWorkoutComponent,
+    EditWorkoutComponent,
+    DeleteWorkoutComponent,
+    TrackWorkoutComponent,
+    ViewWorkoutComponent,
+    EndWorkoutComponent,
+    StartWorkoutComponent
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       {
@@ -50,10 +64,35 @@ import { AddWorkoutComponent } from './Create/add-workout/add-workout.component'
         path: 'add-workout',
         component: AddWorkoutComponent
       },
+      {
+        path: 'track-workout',
+        component: TrackWorkoutComponent
+      },
+      {
+        path: 'view-workout',
+        component: ViewWorkoutComponent
+      },
+      {
+        path: 'start-workout',
+        component: StartWorkoutComponent 
+      },
+      {
+        path: 'end-workout',
+        component: EndWorkoutComponent
+      },
+      {
+        path: 'edit-workout',
+        component: EditWorkoutComponent
+      },
+      {
+        path: 'delete-workout',
+        component: DeleteWorkoutComponent
+      },
+
 
     ])
   ],
   providers: [WorkoutService],
-  bootstrap: [AddWorkoutComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

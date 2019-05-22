@@ -19,6 +19,12 @@ constraint Pk_workout_collection primary key (workout_id)
 
 alter table workout_collection add constraint Fk_workout_collection_workout_category foreign key(category_id) references workout_category(category_id)
 --
+select * from workout_collection
+insert into workout_collection values('legs workout', 'do 50 squats', 5, 1004)
+insert into workout_collection values('yoga', '13 surya namskara', 7, 2)
+insert into workout_collection values('push up', '10 single hand pushup', 10, 1002)
+
+
 
 create table workout_active(
 activity_id int identity,
@@ -36,4 +42,6 @@ FOREIGN KEY (workout_id) REFERENCES workout_collection(workout_id)
 
 select * from workout_category
 
-insert into workout_category values('walking')
+insert into workout_category values('legs')
+
+insert into workout_collection values('')

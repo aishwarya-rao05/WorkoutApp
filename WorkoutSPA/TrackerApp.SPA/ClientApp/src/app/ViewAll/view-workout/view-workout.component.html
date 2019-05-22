@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+        <input type="text" class="form-control" name="startdate" placeholder="Search" />
+        <table class="table">
+          <tr *ngFor="let cat of categorys">
+            <div>
+              <td>{{cat.category_name}}</td>
+              <a [routerLink]="['/edit-workout']" class="btn btn-secondary ml-3">
+                Edit
+              </a>
+
+              <a [routerLink]="['/delete-workout']" class="btn btn-secondary ml-3">
+                Delete
+              </a>
+
+              <a [routerLink]="['/start-workout']" class="btn btn-secondary ml-3">
+                Start
+              </a>
+
+              <a [routerLink]="['/end-workout']" class="btn btn-secondary ml-3">
+                End
+              </a>
+            </div>
+          </tr>
+        </table>
+    </div>
+  </div>
+</div>

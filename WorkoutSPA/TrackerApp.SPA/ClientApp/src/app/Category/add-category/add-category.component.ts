@@ -10,7 +10,7 @@ import { category } from '../../Category';
 })
 /** Add-Category component*/
 export class AddCategoryComponent implements OnInit {
-  /** Add-Category ctor */
+ 
 
   frmCatg: FormGroup;
   @Output() CategoryAdded = new EventEmitter<string>();
@@ -32,10 +32,11 @@ export class AddCategoryComponent implements OnInit {
 
   saveform(frm: NgForm) {
     if (frm.valid) {
+     
       let ctg: category = new category(frm.value.id, frm.value.name);
       this.service.save(ctg).subscribe(
         (data) => alert('Added'),
-        (_error) => console.log('Error processing request')
+        (error) => alert('Error processing request')
       );
     }
   }

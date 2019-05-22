@@ -106,61 +106,7 @@ namespace BusinessLogic1
             }
         }
 
-        //to list all workouts
-        public List<workout_collection> ListWorkout()
-        {
-            try
-            {
-
-                return db.workout_collection.ToList();
-
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
-        //to add a workout
-        public void AddWorkout(workout_collection item)
-        {
-            try
-            {
-                db.workout_collection.Add(item);
-                db.SaveChanges();
-
-            }
-            catch
-            {
-
-            }
-        }
-
-        //to edit the workout
-        public void EditWorkout(workout_collection item)
-        {
-
-            try
-            {
-
-                var ObjCategory = (from obj in db.workout_collection
-                                   where obj.workout_id == item.workout_id
-                                   select obj).First();
-
-                ObjCategory.workout_note = item.workout_note;
-                ObjCategory.workout_title = item.workout_title;
-                ObjCategory.calories_burn_per_min = item.calories_burn_per_min;
-
-                db.SaveChanges();
-
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
+        
     }
 
 

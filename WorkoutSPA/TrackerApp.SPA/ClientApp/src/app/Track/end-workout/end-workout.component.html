@@ -1,0 +1,32 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-12-md">
+      <h5>END WORKOUT</h5>
+      <label class="label label-default">Title</label>
+      <textarea class="form-control" rows="1" cols="10"></textarea>
+      <br />
+      <label class="label label-default">Note</label>
+      <textarea class="form-control" rows="5" cols="30"></textarea>
+      <br />
+
+      <br />
+      <div class="form-group">
+        <label class="label label-default">End Date</label>
+        <input type="text" class="form-control" id='datepicker' name="enddate" placeholder="YYYY/MM/DD" /><br />
+       
+        <label class="label label-default">End Time</label>
+        <input type="text" class="form-control" name="endtime" placeholder="HH:mm" />
+        <br />
+
+      </div>
+
+
+      <br />
+      <button type="submit" class="btn btn-primary btn-lg">End</button>
+      <a [routerLink]="['/track-workout']" class="btn btn-danger btn-lg">
+        Cancel
+      </a>
+    </div>
+  </div>
+</div>

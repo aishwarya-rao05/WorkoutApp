@@ -5,25 +5,24 @@ import { category } from '../../Category';
 import { WorkoutService } from '../../workout.service';
 
 @Component({
-    selector: 'app-add-workout',
-    templateUrl: './add-workout.component.html',
-    styleUrls: ['./add-workout.component.css']
+    selector: 'app-edit-workout',
+    templateUrl: './edit-workout.component.html',
+    styleUrls: ['./edit-workout.component.css']
 })
-/** Add-Workout component*/
-export class AddWorkoutComponent {
+/** edit-workout component*/
+export class EditWorkoutComponent {
+   
 
   frmWorkout: FormGroup;
-  public count: number = 0;
+
   categories: category[];
-  
-  constructor(private fb: FormBuilder, private service: WorkoutService ) {
+
+  constructor(private fb: FormBuilder, private service: WorkoutService) {
     this.frmWorkout = this.fb.group({
       Title: new FormControl('', Validators.required),
       Note: new FormControl('', Validators.required),
-      Calory: new FormControl(0, Validators.required)
+
     });
-
-
 
   }
 
@@ -43,19 +42,4 @@ export class AddWorkoutComponent {
       (error) => alert('Error')
     );
   }
-
-  increase() {
-    this.count = this.count + 0.1;
-  }
-
-  decrease() {
-    if (this.count > 0) {
-      this.count = this.count - 0.1;
-    }
-    else {
-      this.count = 0;
-    }
-  }
-
-
 }
